@@ -11,37 +11,51 @@ class Book extends Component {
         
         this.state = {
             title: this.props.title,
-            body: this.props.title,
-            editMode: false
+            author: this.props.author,
+            year: this.props.year,
+            genre: this.props.genre,
+            readMode: false
         }
     }
 
-    handleEdit(){
+    handleRead(){
         this.setState(
         {
-             editMode: true
+             readMode: true
         });
     }
 
     handlerSave() {
-        this.setState()({
-    title: this.refs.titleContent.value,
-                body: this.refs.bodyContent.value,
-                editMode: false
+        this.setState(
+            {
+                readMode: true
             
-        })
+            }
+        )
             
     }
 
     render() {
+        let titleElement, authorElement, yearElement, genreElement, buttonArea;
+        titleElement = this.state.title;
+        authorElement = this.state.author;
+        yearElement = this.state.year;
+        genreElement = this.state.genre;
+        if(this.state.readMode) {
+            buttonArea = <div><button className="btn btn-danger" >Read</button></div> ;
+        } else {
+            buttonArea = <div><button className="btn btn-warning" onClick={this.handleRead.bind(this)}>Unread</button></div>;
+        }
+        
         return (
             <div className="col-sm-2">
             <div className="card card-view text-white bg-info">
             <div className="card-body ">
-                <h5 className="card-title ">{this.props.title}</h5>
-                    <p className="author">{this.props.author}</p>
-                    <p className="year">{this.props.year}</p>
-                    <p className="genre">{this.props.genre}</p>
+               <p>{titleElement}</p>
+               <p>{authorElement}</p>
+               <p>{yearElement}</p>
+               <p>{genreElement}</p>
+               <p>{buttonArea}</p>
             </div>
             </div>
             </div>
