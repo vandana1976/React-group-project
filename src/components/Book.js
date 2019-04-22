@@ -7,6 +7,32 @@ class Book extends Component {
         super();
     }
 
+    componentWillMount(){
+        
+        this.state = {
+            title: this.props.title,
+            body: this.props.title,
+            editMode: false
+        }
+    }
+
+    handleEdit(){
+        this.setState(
+        {
+             editMode: true
+        });
+    }
+
+    handlerSave() {
+        this.setState()({
+    title: this.refs.titleContent.value,
+                body: this.refs.bodyContent.value,
+                editMode: false
+            
+        })
+            
+    }
+
     render() {
         return (
             <div className="col-sm-2">
