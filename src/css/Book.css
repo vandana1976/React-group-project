@@ -1,10 +1,11 @@
 .col-sm-2{
     background-color: blueviolet;
     margin: 1rem 15px 0;
-    border: 15px solid orange;
+    border-left: 15px solid orange;
 }
 
-body{
-    background-color: brown;
-    
+p{
+    font-family: 'Dancing Script', cursive;
+
 }
+
