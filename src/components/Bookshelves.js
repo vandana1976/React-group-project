@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../css/Bookshelves.css';
 import Book from './Book';
 
 
 class Bookshelves extends Component {
-    constructor() {
-        super(); 
+  constructor() {
+    super();
     //     this.state = {
     //         book: [
     //             {
@@ -44,7 +44,7 @@ class Bookshelves extends Component {
     //                  year:"2019",
     //                   genre:"Science Fiction"
     //             }
-                
+
     //         ]
     //     }
     // }
@@ -55,7 +55,7 @@ class Bookshelves extends Component {
     //             title: "New Book Title",
     //             Author: "New Book Author",
     //             Year: "New Book Year"
-                
+
     //         }
     //     );
     //     this.setState(
@@ -63,61 +63,59 @@ class Bookshelves extends Component {
     //             book: this.state.book
     //         }
     //     )
-        
+
     // }
 
     this.state = {
-        books: []
-      };
-    }
-  
-    addBook() {
-      this.state.books.push({
-        id: Date.now()
-      });
-      this.setState({
-        books: this.state.books
-      });
-    }
-  
-    deleteBook(id) {
-      let newBookArr = this.state.books;
-      newBookArr.map((book, index) => {
-        if (id === book.id) {
-          newBookArr.splice(index, 1);
-        }
-      });
-      this.setState({
-        books: newBookArr
-      });
-    }
+      books: []
+    };
+  }
 
-    render() {
-        return (
-            <div>
-                <div className="div-board">
-                    <div className="row">
-                    {this.state.books.map(book => {
-                    return (
-                        <Book
-                        key={book.id}
-                        id={book.id}
-                        deleteHandler={this.deleteBook.bind(this)}
-                        />
-                    );
-                    })}
-                   
-                     <div>
-                <button className="btn btn-success add-button" onClick ={this.addBook.bind(this)}>Add</button>
-            </div>
-                    </div>
-                </div>
-                <div>
-                    
-                </div>
-            </div>
-        )
-    }
+  addBook() {
+    this.state.books.push({
+      id: Date.now()
+    });
+    this.setState({
+      books: this.state.books
+    });
+  }
+
+  deleteBook(id) {
+    let newBookArr = this.state.books;
+    newBookArr.map((book, index) => {
+      if (id === book.id) {
+        newBookArr.splice(index, 1);
+      }
+    });
+    this.setState({
+      books: newBookArr
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="div-board">
+          <div className="row">
+            {this.state.books.map(book => {
+              return (
+                <Book
+                  key={book.id}
+                  id={book.id}
+                  deleteHandler={this.deleteBook.bind(this)}
+                />
+
+              );
+            })}
+          </div>
+          <div>
+            <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
 }
 
 export default Bookshelves;

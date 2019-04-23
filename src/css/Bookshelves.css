@@ -1,5 +1,14 @@
-body {
-    background: rgb(105,53,4);
- background: linear-gradient(90deg, rgba(105,53,4,1) 0%, rgba(87,32,11,0.8746849081429446) 0%);
+body{
+    background: rgb(2,84,87);
+background: radial-gradient(circle, rgba(2,84,87,1) 0%, rgba(233,190,148,1) 100%);
  }
+
+ 
+
+.div-board {
+    margin: 1rem 15px 0;
+    border: solid black;
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
  

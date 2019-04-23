@@ -142,7 +142,7 @@ class Book extends Component {
         
         return (
             <div className="col-sm-2">
-            <div className="card card-view text-white bg-info">
+            <div className="card card-view text-white bg-dark">
             <div className="card-body ">
                <h5>{titleElement}</h5>
                <p>{authorElement}</p>
