@@ -121,7 +121,7 @@ class Book extends Component {
               );
             buttonArea = (
                 <div>
-                    <button className="btn btn-danger" onClick={this.handleAdd.bind(this)}>Add to Bookshelve
+                    <button className="btn btn-dark" onClick={this.handleAdd.bind(this)}>Add to Bookshelve
                     </button>
                 </div> 
             );
