@@ -8,7 +8,7 @@ const Navigation = () => {
             <ul>
                 <li style={{marginLeft: "50px"}}><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/bookshelf">Bookshelf</NavLink></li>
-                <li><NavLink to="/purchase">Buy</NavLink></li>
+                <li><NavLink to="/buy">Buy</NavLink></li>
             </ul>
 
         </div>
