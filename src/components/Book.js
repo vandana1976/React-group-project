@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../css/Book.css';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const GENERIC_BOOK_TITLE = "New Book Title",
@@ -74,11 +75,7 @@ class Book extends Component {
         yearElement = this.state.year;
         genreElement = this.state.genre;
 
-        // if(this.state.readMode && !this.state.editMode) {
-        //     buttonArea = <div><button className="btn btn-danger" >Read</button></div> ;
-        // } else {
-        //     buttonArea = <div><button className="btn btn-warning" onClick={this.handleRead.bind(this)}>Unread</button></div>;
-        // }
+    
 
         if(!this.state.added && !this.state.editMode) {
             titleElement = <h5>{this.state.title}</h5>
@@ -134,16 +131,24 @@ class Book extends Component {
                 <div>
                     <button className="btn btn-danger" onClick={this.handleSave.bind(this)}>Read
                     </button>
+                    <a href="/buy"><button className="btn btn-danger">Buy
+                        </button></a>
             </div> )
         }   else  {
-            buttonArea = <div><button className="btn btn-warning" onClick={this.handleRead.bind(this)}>Unread</button></div>;
+            buttonArea = <div><button className="btn btn-warning" onClick={this.handleRead.bind(this)}>Unread</button>
+            <a href="/buy"><button className="btn btn-danger">Buy
+                        </button></a>
+            </div>;
+            
         }
         
         
         return (
-            <div className="col-sm-2">
+            
+        
+                <div className="col-sm-2">
             <div className="card card-view text-white bg-dark">
-            <div className="card-body ">
+            <div className="card-body">
                <h5>{titleElement}</h5>
                <p>{authorElement}</p>
                <p>{yearElement}</p>
@@ -152,6 +157,7 @@ class Book extends Component {
             </div>
             </div>
             </div>
+        
 
 
         )

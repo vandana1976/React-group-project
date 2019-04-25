@@ -80,6 +80,8 @@ class Bookshelves extends Component {
     });
   }
 
+  
+
   deleteBook(id) {
     let newBookArr = this.state.books;
     newBookArr.map((book, index) => {
@@ -111,6 +113,7 @@ class Bookshelves extends Component {
           <div>
             <button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button>
           </div>
+        
         </div>
 
       </div>

@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import Bookshelves from './components/Bookshelves';
 // import Note from './components/Note';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
 
 
-ReactDOM.render(<Bookshelves />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<Note />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
